@@ -176,20 +176,26 @@ const GameBoard = () => {
     if (!winner) return null;
     
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-        <div className="bg-gradient-to-br from-black/80 to-black/60 p-8 rounded-2xl border border-white/20 shadow-xl text-center transform scale-110 transition-all duration-500">
-          <Trophy className={`w-16 h-16 mx-auto mb-4 ${winner === 'X' ? 'text-tictac-blue-light' : 'text-tictac-purple'}`} />
-          <h2 className={`text-4xl font-bold mb-4 font-game ${winner === 'X' ? 'text-tictac-blue-light' : 'text-tictac-purple'}`}>
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md">
+        <div className="win-message-container p-10 rounded-2xl text-center transform transition-all duration-500 win-message">
+          <div className="win-message-trophy">
+            <Trophy className={`w-20 h-20 mx-auto mb-6 ${winner === 'X' ? 'text-tictac-blue-light' : 'text-tictac-purple'}`} />
+          </div>
+          <h2 className={`text-5xl font-bold mb-4 font-game win-message-text`}>
             Player {winner} Wins!
           </h2>
-          <p className="text-white/80 mb-6">Congratulations on your victory!</p>
-          <Button
-            variant="outline"
-            className="win-action-button"
-            onClick={resetGame}
-          >
-            Play Again
-          </Button>
+          <p className="text-white/80 mb-8 text-lg">
+            Congratulations on your victory!
+          </p>
+          <div className="flex justify-center gap-4">
+            <Button
+              variant="outline"
+              className="win-action-button"
+              onClick={resetGame}
+            >
+              Play Again
+            </Button>
+          </div>
         </div>
       </div>
     );
@@ -283,12 +289,12 @@ const GameBoard = () => {
         </div>
         
         {/* Game Layout */}
-        <div className="flex justify-between items-start max-w-6xl mx-auto">
+        <div className="flex justify-between items-start max-w-5xl mx-auto">
           {/* Main Game Board */}
-          <div className="flex-1 mr-8">
-            <div className="grid grid-cols-3 gap-4 md:gap-6 p-6 rounded-xl 
+          <div className="flex-1 mr-6">
+            <div className="grid grid-cols-3 gap-3 md:gap-4 p-4 rounded-xl 
               bg-gradient-to-br from-black/50 to-black/30 backdrop-blur-md shadow-xl 
-              border border-white/10">
+              border border-white/10 transform scale-90">
               {Array(9).fill(null).map((_, boardIndex) => (
                 <div key={boardIndex} className="transform transition-all duration-300 hover:scale-[1.02]">
                   {renderBoard(boardIndex)}
@@ -298,7 +304,7 @@ const GameBoard = () => {
           </div>
 
           {/* Side Panel with Score */}
-          <div className="w-64 sticky top-8">
+          <div className="w-56 sticky top-8">
             {renderMainBoard()}
           </div>
         </div>
