@@ -32,8 +32,8 @@ const Index = () => {
 
   return (
     <div className="bg-black min-h-screen overflow-hidden relative">
-      {/* Dynamic gradient background */}
-      <div className="fixed inset-0 z-0 gradient-bg opacity-20"></div>
+      {/* Dynamic black gradient background */}
+      <div className="fixed inset-0 z-0 bg-gradient-to-br from-black via-black/90 to-black/80 opacity-100"></div>
       
       {/* Moving spheres in the background */}
       <FloatingSpheres />

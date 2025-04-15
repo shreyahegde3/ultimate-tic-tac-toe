@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Zap, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from 'next/image';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,8 +26,14 @@ const Navbar = () => {
     }`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <Zap className="w-6 h-6 text-tictac-purple animate-pulse-slow" />
-          <span className="text-xl font-bold tracking-tighter">ULTIMATE TIC-TAC-TOE</span>
+          <Image 
+            src="/lovable-uploads/97109072-9f33-40b0-8da2-f78a70a0f846.png" 
+            alt="Tic Tac Toe Logo" 
+            width={40} 
+            height={40} 
+            className="animate-pulse-slow"
+          />
+          <span className="text-xl font-bold tracking-tighter text-white">ULTIMATE TIC-TAC-TOE</span>
         </div>
         
         {/* Desktop Navigation */}
