@@ -5,10 +5,10 @@ import { ArrowRight, Zap } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24">
       <div className="space-y-6">
         <div className="overflow-hidden">
-          <p className="text-tictac-purple font-medium uppercase tracking-wider animate-on-scroll transition-all duration-500 transform translate-y-0">WELCOME TO ULTIMATE TIC-TAC-TOE</p>
+          <p className="text-tictac-purple font-medium uppercase tracking-wider animate-on-scroll transition-all duration-500 transform translate-y-0 mt-16">WELCOME TO ULTIMATE TIC-TAC-TOE</p>
         </div>
         
         <div className="overflow-hidden">

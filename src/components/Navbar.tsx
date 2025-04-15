@@ -20,17 +20,17 @@ const Navbar = () => {
   }, [scrolled]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-12 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 py-6 px-6 md:px-12 transition-all duration-300 ${
       scrolled ? 'glass-effect backdrop-blur-xl' : 'bg-transparent'
     }`}>
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="flex items-center space-x-3">
           <Zap className="w-6 h-6 text-tictac-purple animate-pulse-slow" />
           <span className="text-xl font-bold tracking-tighter">ULTIMATE TIC-TAC-TOE</span>
         </div>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-12">
+        <div className="hidden md:flex items-center space-x-16">
           <a href="#learn" className="nav-link font-medium text-white hover:text-tictac-purple transition-colors duration-300">Learn</a>
           <a href="#play" className="nav-link font-medium text-white hover:text-tictac-purple transition-colors duration-300">Play</a>
           <a href="#explore" className="nav-link font-medium text-white hover:text-tictac-purple transition-colors duration-300">Explore</a>
@@ -50,7 +50,7 @@ const Navbar = () => {
         
         {/* Play Now Button (desktop) */}
         <div className="hidden md:block">
-          <Button className="bg-tictac-purple hover:bg-tictac-purple-dark text-white animated-button">
+          <Button className="bg-gradient-to-r from-tictac-purple to-tictac-purple-dark text-white animated-button">
             Play Now
           </Button>
         </div>

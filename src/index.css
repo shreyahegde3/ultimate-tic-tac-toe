@@ -99,7 +99,7 @@
 
 /* Custom styles for the tic-tac-toe theme */
 .gradient-bg {
-  background: linear-gradient(-45deg, #9b87f5, #8B5CF6, #0EA5E9, #F97316);
+  background: linear-gradient(-45deg, #9b87f5, #8B5CF6, #0EA5E9, #33C3F0);
   background-size: 400% 400%;
   animation: gradient-shift 15s ease infinite;
 }
@@ -139,12 +139,14 @@
 .nav-link {
   position: relative;
   transition: all 0.3s ease;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   width: 0%;
   height: 2px;
@@ -213,4 +215,29 @@
 
 .animate-pulse-slow {
   animation: pulse 4s ease-in-out infinite;
+}
+
+/* Enhanced navbar styling */
+nav {
+  transition: all 0.4s ease;
+}
+
+nav.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* New animation for counter stats */
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.counter {
+  animation: count-up 1.5s ease-out forwards;
 }
