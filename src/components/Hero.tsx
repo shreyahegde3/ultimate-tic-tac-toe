@@ -1,14 +1,16 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24">
       <div className="space-y-6">
         <div className="overflow-hidden">
-          <p className="text-tictac-purple font-medium uppercase tracking-wider animate-on-scroll transition-all duration-500 transform translate-y-0 mt-16">WELCOME TO ULTIMATE TIC-TAC-TOE</p>
+          <p className="text-tictac-blue-light font-medium uppercase tracking-wider animate-on-scroll transition-all duration-500 transform translate-y-0 mt-16">WELCOME TO ULTIMATE TIC-TAC-TOE</p>
         </div>
         
         <div className="overflow-hidden">
@@ -28,7 +30,10 @@ const Hero = () => {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center animate-on-scroll transition-all duration-700 delay-500">
-          <Button className="bg-gradient-to-r from-tictac-purple to-tictac-purple-dark text-white px-8 py-7 text-lg animated-button group">
+          <Button 
+            className="bg-gradient-to-r from-tictac-blue to-tictac-blue-light text-white px-8 py-7 text-lg animated-button group"
+            onClick={() => navigate('/play')}
+          >
             Play Now 
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Button>
